@@ -14,6 +14,26 @@ import {
 } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 
+export class ListItem extends Component {
+  render() {
+
+    return (
+      <View style={styles.listItem}>
+        <View style={{flex: 5}}>
+        <Text style={styles.title}>
+          Buying Coffee from Starbucks
+        </Text>
+        <Text style={styles.subtitle}>
+          £90.30 saved
+        </Text>
+        </View>
+        <View style={styles.rightButton}>
+        </View>
+      </View>
+    );
+  }
+}
+
 class Resist extends Component {
   render() {
       var rightButtonConfig = {
@@ -33,18 +53,9 @@ class Resist extends Component {
           style={styles.navbar}
           />
         <View style={styles.container}>
-          <View style={styles.listItem}>
-            <View style={{flex: 5}}>
-            <Text style={styles.title}>
-              Buying Coffee from Starbucks
-            </Text>
-            <Text style={styles.subtitle}>
-              £90.30 saved
-            </Text>
-            </View>
-            <View style={styles.rightButton}>
-            </View>
-          </View>
+          <ListItem />
+          <ListItem />
+          <ListItem />
         </View>
       </View>
     );
@@ -66,7 +77,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderLeftColor: '#C9E25D',
     borderLeftWidth: 7,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: 10,
+    marginBottom: 10
   },
   title: {
     color: '#4A4A4A',
